@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "samplecluster-5bb0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "samplecluster-5bb0"
+  template:
+    metadata:
+      labels:
+        app: "samplecluster-5bb0"
+    spec:
+      containers:
+        - name: "samplecluster-5bb0"
+          image: "mytcs2023.azurecr.io/samplecluster"
+          ports:
+          - containerPort: 80
